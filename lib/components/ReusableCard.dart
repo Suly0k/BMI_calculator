@@ -6,18 +6,22 @@ class ReusableCard extends StatelessWidget {
   /*Constructor*/
   final Color diffColor;
   final Widget? cardChild; //? -> nem required
-  ReusableCard({required this.diffColor, this.cardChild});
+  final Function()? onPress; //()? -> kell
+  ReusableCard({required this.diffColor, this.cardChild, this.onPress});
 
   //tobbszor hasznalatos kod roviditesere
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.all(15.0),
-      decoration: BoxDecoration(
-        color: diffColor,
-        borderRadius: BorderRadius.circular(10.0),
+    return GestureDetector(
+      onTap: onPress,
+      child: Container(
+        margin: const EdgeInsets.all(15.0),
+        decoration: BoxDecoration(
+          color: diffColor,
+          borderRadius: BorderRadius.circular(10.0),
+        ),
+        child: cardChild,
       ),
-      child: cardChild,
     );
   }
 }

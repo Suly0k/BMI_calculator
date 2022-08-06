@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
-
-const diffTextStyle = TextStyle(
-  fontSize: 18.0,
-  color: Color(0xff8d8e98),
-);
+import '../constants.dart';
 
 class BuildColumn extends StatelessWidget {
   final IconData? diffIcon;
@@ -23,7 +19,7 @@ class BuildColumn extends StatelessWidget {
         const SizedBox(
           height: 15.0,
         ),
-        Text(diffText, style: diffTextStyle),
+        Text(diffText, style: kLabelTextStyle),
       ],
     );
   }
